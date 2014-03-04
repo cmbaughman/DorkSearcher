@@ -16,6 +16,24 @@
     <string name="action_share">Share</string>
     <string name="drawer_open">Sliding menu open!</string>
     <string name="drawer_close">Sliding menu closed!</string>
+    <string name="rss_layout_urltext_text">http://rss.slashdot.org/Slashdot/slashdot</string>
+    <string name="rss_layout_statustext_text">Updating&#8230;</string>
+    <string name="rss_layout_download_text">Download</string>
+    <string name="dork_items_prompt">Choose a category</string>
+
+    <string-array name="dork_items">
+        <item>Files Containing Usernames</item>
+        <item>Files Containing Juicy Info</item>
+        <item>Files Containing Passwords</item>
+        <item>Various Connected Devices</item>
+        <item>Footholds</item>
+        <item>Online Shopping Info</item>
+    </string-array>
+
+    <string-array name="dork_providers">
+        <item>Google</item>
+        <item>Bing</item>
+    </string-array>
 
     <string-array name="drawer_items">
         <item>Home</item>
@@ -24,6 +42,12 @@
         <item>Latest Exploits From Exploit-DB</item>
         <item>Google Dorks</item>
     </string-array>
+
+    <string name="action_search">Search</string>
+    <string name="action_help">Help</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="spinner_prompt">Select</string>
+    <string name="choose_source">Choose Source</string>
 
 
 

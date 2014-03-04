@@ -6,4 +6,10 @@
     <color name="list_divider">#272727</color>
     <color name="counter_text_bg">#626262</color>
     <color name="counter_text_color">#c5c4c4</color>
+    <color name="holo_blue_lite">#33B5E5</color>
+    <color name="holo_blue_dark">#0099CC</color>
+    <color name="holo_blue_bright">#00DDFF</color>
+    <color name="holo_jb">#287AA9</color>
+    <color name="green_yello">#7E9234</color>
+    <color name="silver">#CCCCCC</color>
 </resources>
