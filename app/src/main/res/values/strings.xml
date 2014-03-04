@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DorkSearcher</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_search_terms">Search Terms</string>
+    <string name="action_news">Latest</string>
+    <string name="latest_files">Files</string>
+    <string name="latest_exploits">Exploits</string>
+    <string name="menu_packetstorm">Packet Storm Security</string>
+    <string name="menu_exploitdb">Exploit-DB</string>
+    <string name="the_sources">Source</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_dorks">Google Dorks</string>
+    <string name="action_about">About</string>
+    <string name="action_share">Share</string>
+    <string name="drawer_open">Sliding menu open!</string>
+    <string name="drawer_close">Sliding menu closed!</string>
+
+    <string-array name="drawer_items">
+        <item>Home</item>
+        <item>Latest Files From PacketStorm Security</item>
+        <item>Latest News From PacketStorm Security</item>
+        <item>Latest Exploits From Exploit-DB</item>
+        <item>Google Dorks</item>
+    </string-array>
+
+
+
+</resources>
