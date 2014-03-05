@@ -49,8 +49,8 @@ public class HomeFragment extends Fragment {
         listV = (ListView)rootView.findViewById(R.id.listBox);
         catSpin = (Spinner)rootView.findViewById(R.id.catSpin);
 
-        list = dorks.getFeed(rootView.getContext());
-        adapter = new ArrayAdapter<String>(rootView.getContext(), android.R.layout.simple_list_item_1, list);
+        list = dorks.getFeed(getActivity());
+        adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
         listV.setAdapter(adapter);
         listV.setChoiceMode(AbsListView.CHOICE_MODE_SINGLE);
 
@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
 
                 }
                 adapter.clear();
-                list = dorks.getFeed(getBaseContext());
+                list = dorks.getFeed(getActivity());
                 adapter.addAll(list);
                 adapter.notifyDataSetChanged();
                 listV.refreshDrawableState();
@@ -121,7 +121,7 @@ public class HomeFragment extends Fragment {
                                            int pos, long arg3) {
                 dorkSelected = list.get(pos).toString();
 
-                if (BuildConfig.DEBUG) { Log.d(TAG, LOG + " onItemLongClick Called"); }
+                if (BuildConfig.DEBUG) { Log.d(TAG, "HomeFragment" + " onItemLongClick Called"); }
                 Intent inten = new Intent(Intent.ACTION_SEND);
                 inten.setType("text/plain");
                 inten.putExtra(Intent.EXTRA_TEXT, dorkSelected);
@@ -144,13 +144,15 @@ public class HomeFragment extends Fragment {
                         uuri = Uri.parse("http://www.google.com/#q=" + URLEncoder.encode(list.get(pos), "UTF-8"));
                     }
                     catch(UnsupportedEncodingException uex) {
-                        Log.e(TAG, "MainActivity", uex);
+                        Log.e(TAG, "HomeActivity", uex);
                     }
                     startActivity(new Intent(Intent.ACTION_VIEW, uuri));
                 }
-                Toast.makeText(getBaseContext(), uuri.toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), uuri.toString(), Toast.LENGTH_LONG).show();
             }
         });
+
+        return rootView;
     }
 
     @Override
@@ -159,7 +161,7 @@ public class HomeFragment extends Fragment {
         switch (item.getItemId()) {
             case R.id.action_help:
                 // location found
-                AboutDialog sh = new AboutDialog(this);
+                AboutDialog sh = new AboutDialog(getActivity());
                 sh.setTitle("About Google Dorks by CMB");
                 sh.show();
                 return true;
