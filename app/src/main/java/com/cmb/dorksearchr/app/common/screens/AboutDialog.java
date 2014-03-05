@@ -40,7 +40,6 @@ public class AboutDialog extends Dialog {
     public static String readRawTextFile(int id) {
         InputStream inputStream = mContext.getResources().openRawResource(id);
 
-
         InputStreamReader in = new InputStreamReader(inputStream);
         BufferedReader buf = new BufferedReader(in);
         String line;
@@ -52,7 +51,6 @@ public class AboutDialog extends Dialog {
         } catch (IOException e) {
             return null;
         }
-
 
         return text.toString();
     }

@@ -14,12 +14,29 @@
     <string name="action_dorks">Google Dorks</string>
     <string name="action_about">About</string>
     <string name="action_share">Share</string>
-    <string name="drawer_open">Sliding menu open!</string>
-    <string name="drawer_close">Sliding menu closed!</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
     <string name="rss_layout_urltext_text">http://rss.slashdot.org/Slashdot/slashdot</string>
     <string name="rss_layout_statustext_text">Updating&#8230;</string>
     <string name="rss_layout_download_text">Download</string>
     <string name="dork_items_prompt">Choose a category</string>
+
+    <string name="settings_showfiles">Show Latest Files From PacketStorm Security</string>
+    <string name="settings_sync_freq">Synchronize frequency</string>
+    <string-array name="settings_freq_entries">
+        <item>30 Minutes</item>
+        <item>60 Minutes</item>
+        <item>2 Hours</item>
+        <item>On Demand Only</item>
+    </string-array>
+    <string-array name="settings_freq_entries_values">
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>0</item>
+    </string-array>
+
+    <string name="settings_freq_entries_value_default">0</string>
 
     <string-array name="dork_items">
         <item>Files Containing Usernames</item>

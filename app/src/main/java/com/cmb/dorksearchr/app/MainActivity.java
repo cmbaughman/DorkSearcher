@@ -1,8 +1,10 @@
 package com.cmb.dorksearchr.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.app.Fragment;
 import android.app.FragmentManager;
@@ -13,9 +15,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.ShareActionProvider;
 
 import com.cmb.dorksearchr.app.adapter.NavDrawerListAdapter;
+import com.cmb.dorksearchr.app.common.screens.AboutDialog;
 import com.cmb.dorksearchr.app.model.NavDrawerItem;
+import com.cmb.dorksearchr.app.SettingsActivity;
 
 import java.util.ArrayList;
 
@@ -30,10 +35,15 @@ public class MainActivity extends Activity {
     private ArrayList<NavDrawerItem> navDrawerItems;
     private NavDrawerListAdapter adapter;
 
+    private ShareActionProvider mShare;
+    protected String dorkSelected = "Nothing selected to share";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        PreferenceManager.setDefaultValues(this, R.xml.user_settings, false);
 
         mTitle = mDrawerTitle = getTitle();
         navMenuTitles = getResources().getStringArray(R.array.drawer_items);
@@ -42,19 +52,9 @@ public class MainActivity extends Activity {
         mDrawerList = (ListView)findViewById(R.id.list_slidermenu);
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
-        for(int i = 0; i <= navMenuTitles.length; i++) {
-            switch (i) {
-                case 0:
-                    navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], "1"));
-                    break;
-                case 3:
-                    navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], "55", true));
-                    break;
-                default:
-                    navDrawerItems.add(new NavDrawerItem(navMenuTitles[i], "1", true));
-                    break;
-            }
-        }
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], "1"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], "7"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], "1"));
 
         adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);
@@ -62,16 +62,20 @@ public class MainActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getActionBar().setHomeButtonEnabled(true);
 
-        mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_drawer, R.string.app_name, R.string.app_name)
+        mDrawerToggle = new ActionBarDrawerToggle(this,
+                mDrawerLayout,
+                R.drawable.ic_drawer,
+                R.string.drawer_open, R.string.drawer_close)
         {
-            public void onDrawerClosed(View view) {
+            public void onDrawerClosed(View dView) {
+                super.onDrawerClosed(dView);
                 getActionBar().setTitle(mTitle);
                 invalidateOptionsMenu();
             }
 
-            public void onDrawerOpen(View drawerView) {
+            public void onDrawerOpened(View dView) {
                 getActionBar().setTitle(mDrawerTitle);
+                Log.d("MainActivity", "Drawer toggler open activated!");
                 invalidateOptionsMenu();
             }
         };
@@ -96,6 +100,12 @@ public class MainActivity extends Activity {
         switch(position) {
             case 0:
                 fragment = new HomeFragment();
+                break;
+            case 1:
+                Log.d("MainActivity", "Drawer Item 1 selected.");
+                break;
+            case 2:
+                Log.d("MainActivity", "Drawer Item 2 selected.");
                 break;
             default:
                 break;
@@ -126,14 +136,26 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*
+            Handle action bar item clicks here. The action bar will
+            This if satement is to toggle the navigationdrawer when title is clicked.
+        */
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
 
+        int id = item.getItemId();
+        Intent intent;
         switch (id) {
             case R.id.action_settings:
-               return true;
+                intent = new Intent(this, SettingsActivity.class);
+                startActivity(intent);
+                return true;
+            case R.id.action_help:
+                AboutDialog sh = new AboutDialog(this);
+                sh.setTitle("About Google Dorks by CMB");
+                sh.show();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

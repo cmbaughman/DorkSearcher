@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/action_settings">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="showPacketStormFiles"
+            android:summary="@string/settings_showfiles"
+            android:title="@string/latest_files">
+        </CheckBoxPreference>
+
+        <ListPreference
+            android:title="@string/settings_sync_freq"
+            android:summary="Frequency to check for updates"
+            android:defaultValue="@string/settings_freq_entries_value_default"
+            android:entries="@array/settings_freq_entries"
+            android:entryValues="@array/settings_freq_entries_values"
+        />
+
+    </PreferenceCategory>
+</PreferenceScreen>

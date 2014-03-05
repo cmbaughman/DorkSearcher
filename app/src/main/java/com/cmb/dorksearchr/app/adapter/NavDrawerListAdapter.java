@@ -21,7 +21,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
     private ArrayList<NavDrawerItem> navDrawerItems;
 
     public NavDrawerListAdapter(Context ctx, ArrayList<NavDrawerItem> navDrawerItems) {
-        this.context = context;
+        this.context = ctx;
         this.navDrawerItems = navDrawerItems;
     }
 
@@ -43,8 +43,7 @@ public class NavDrawerListAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if(convertView == null) {
-            LayoutInflater inflater = (LayoutInflater)context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.drawer_list_item, null);
+            convertView = LayoutInflater.from(context).inflate(R.layout.drawer_list_item, null);
         }
         TextView title = (TextView)convertView.findViewById(R.id.nav_sec_title);
         TextView counter = (TextView)convertView.findViewById(R.id.counter);
