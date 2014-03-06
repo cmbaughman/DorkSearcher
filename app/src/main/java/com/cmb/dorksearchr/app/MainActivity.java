@@ -52,9 +52,10 @@ public class MainActivity extends Activity {
         mDrawerList = (ListView)findViewById(R.id.list_slidermenu);
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], "1"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], "1", false));
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], "7"));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], "1"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], "7"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], "7"));
 
         adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);
@@ -102,11 +103,15 @@ public class MainActivity extends Activity {
                 fragment = new HomeFragment();
                 break;
             case 1:
+                fragment = new LatestFeedsFragment(1);
                 Log.d("MainActivity", "Drawer Item 1 selected.");
                 break;
             case 2:
+                fragment = new LatestFeedsFragment(2);
                 Log.d("MainActivity", "Drawer Item 2 selected.");
                 break;
+            case 3:
+                fragment = new LatestFeedsFragment(3);
             default:
                 break;
         }

@@ -17,12 +17,12 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
     <string name="rss_layout_urltext_text">http://rss.slashdot.org/Slashdot/slashdot</string>
-    <string name="rss_layout_statustext_text">Updating&#8230;</string>
+    <string name="rss_layout_statustext_text">Updating…</string>
     <string name="rss_layout_download_text">Download</string>
     <string name="dork_items_prompt">Choose a category</string>
-
     <string name="settings_showfiles">Show Latest Files From PacketStorm Security</string>
     <string name="settings_sync_freq">Synchronize frequency</string>
+
     <string-array name="settings_freq_entries">
         <item>30 Minutes</item>
         <item>60 Minutes</item>
@@ -46,12 +46,10 @@
         <item>Footholds</item>
         <item>Online Shopping Info</item>
     </string-array>
-
     <string-array name="dork_providers">
         <item>Google</item>
         <item>Bing</item>
     </string-array>
-
     <string-array name="drawer_items">
         <item>Home</item>
         <item>Latest Files From PacketStorm Security</item>
@@ -65,7 +63,6 @@
     <string name="action_refresh">Refresh</string>
     <string name="spinner_prompt">Select</string>
     <string name="choose_source">Choose Source</string>
-
-
+    <string name="title_activity_xml_feed">XmlFeedActivity</string>
 
 </resources>
