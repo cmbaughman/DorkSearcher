@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
                 fragment = new HomeFragment();
                 break;
             case 1:
-                fragment = new LatestFeedsFragment(1);
+                fragment = new LatestFeedsFragment(2);
                 Log.d("MainActivity", "Drawer Item 1 selected.");
                 break;
             case 2:
