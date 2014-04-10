@@ -53,9 +53,9 @@ public class MainActivity extends Activity {
 
         navDrawerItems = new ArrayList<NavDrawerItem>();
         navDrawerItems.add(new NavDrawerItem(navMenuTitles[0], "1", false));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], "7"));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], "7"));
-        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], "7"));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[1], "7", false));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[2], "7", false));
+        navDrawerItems.add(new NavDrawerItem(navMenuTitles[3], "7", false));
 
         adapter = new NavDrawerListAdapter(getApplicationContext(), navDrawerItems);
         mDrawerList.setAdapter(adapter);

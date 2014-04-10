@@ -52,10 +52,9 @@
     </string-array>
     <string-array name="drawer_items">
         <item>Home</item>
-        <item>Latest Files From PacketStorm Security</item>
+        <item>Latest From Exploit-DB</item>
         <item>Latest News From PacketStorm Security</item>
-        <item>Latest Exploits From Exploit-DB</item>
-        <item>Google Dorks</item>
+        <item>Latest Files From PacketStorm Security</item>
     </string-array>
 
     <string name="action_search">Search</string>

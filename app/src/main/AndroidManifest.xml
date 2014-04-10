@@ -20,14 +20,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.cmb.dorksearchr.app.SettingsActivity" />
-        <activity
-            android:name="com.cmb.dorksearchr.app.XmlFeedActivity"
-            android:label="@string/title_activity_xml_feed"
-            android:parentActivityName="com.cmb.dorksearchr.app.MainActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainActivity" />
-        </activity>
 
     </application>
 

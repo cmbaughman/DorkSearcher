@@ -8,27 +8,27 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.cmb.dorksearchr.app.R;
-import com.cmb.dorksearchr.app.model.Feeds;
+import com.cmb.dorksearchr.app.common.rssreader.lib.RssItem;
 
 import java.util.List;
 
 /**
  * Created by cmb on 3/6/14.
  */
-public class FeedListAdapter extends ArrayAdapter<Feeds> {
+public class FeedListAdapter extends ArrayAdapter<RssItem> {
 
     private static class ViewHolder {
         TextView title;
         TextView url;
     }
 
-    public FeedListAdapter(Context context, List<Feeds> feedsArrayList) {
+    public FeedListAdapter(Context context, List<RssItem> feedsArrayList) {
         super(context, R.layout.feed_item, feedsArrayList);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Feeds feeds = getItem(position);
+        RssItem feeds = getItem(position);
 
         ViewHolder viewHolder;
         if(convertView == null) {
@@ -43,8 +43,8 @@ public class FeedListAdapter extends ArrayAdapter<Feeds> {
             viewHolder = (ViewHolder)convertView.getTag();
         }
 
-        viewHolder.title.setText(feeds.getFeedTitle());
-        viewHolder.url.setText(feeds.getFeedUrl());
+        viewHolder.title.setText(feeds.getTitle());
+        viewHolder.url.setText(feeds.getDescription());
 
         return convertView;
     }
