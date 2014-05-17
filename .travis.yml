@@ -1,5 +1,12 @@
 language: android
 jdk: oraclejdk7
+
+android: 
+  components:
+    - build-tools-19.0.0
+    - android-19
+    - support-v4-19.0.1
+
 before_install:
     - wget http://dl.google.com/android/android-sdk_r22.3-linux.tgz
     - tar xzf android-sdk_r22.3-linux.tgz
@@ -7,9 +14,3 @@ before_install:
     - export PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
     - echo y | android update sdk --filter platform-tools,android-18,addon-google_apis-google-18,extra-android-m2repository --no-ui --force
     - ./install-supportlibs.sh
-
-android: 
-  components:
-    - build-tools-19.0.0
-    - android-19
-    - support-v4-19.0.1
